@@ -1,8 +1,9 @@
-
+import React from "react";
+import Accordion from "./component/Accodion.js";
 function App() {
   return (
     <div>
-      Hello to the World of React!! 
+      <Accordion />
     </div>
   );
 }
