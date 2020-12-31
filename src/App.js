@@ -5,6 +5,7 @@ import Accordion from "./component/Accodion.js";
 import Search from "./component/Search.js"
 import Dropdown from "./component/Dropdown.js";
 import Route from "./component/Route.js";
+import Header from "./component/Header.js"
 
 const items = [
   {
@@ -41,6 +42,7 @@ function App() {
   const [selected, setSelected] = useState(options[0]);
   return (
     <div>
+      <Header />
       <Route path='/'>
         <Accordion items={items}/>
       </Route>
