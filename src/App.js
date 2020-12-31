@@ -37,16 +37,27 @@ const options = [
 
 function App() {
   const [selected, setSelected] = useState(options[0]);
+  const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
       {/* <Accordion items={items}/> */}
       {/* <Search /> */}
-      <Dropdown 
-        options={options}
-        selected={selected}
-        //onSelectedChange is our own created event
-        onSeletedChange={setSelected}
-      />
+      <button
+        className="ui large button"
+        onClick={() => setShowDropdown(!showDropdown)}
+      >
+        Dropdown Here!!
+      </button>
+      {showDropdown ? (
+        <Dropdown
+          options={options}
+          selected={selected}
+          //onSelectedChange is our own created event
+          onSeletedChange={setSelected}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
