@@ -4,6 +4,7 @@
 
 import React, { useState } from "react";
 import Dropdown from "./Dropdown.js";
+import Convert from "./Convert.js"
 
 const options = [
   {
@@ -49,6 +50,8 @@ const Translate = () => {
             label={label}
         />
         </div>
+        <h3 className='ui header'>Output</h3>
+        <Convert language={language} text={text}/>
     </div>
   );
 };
