@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "fomantic-ui-css/semantic.min.css";
-import Translate from "./component/Translate.js"
+import Translate from "./component/Translate.js";
 import Accordion from "./component/Accodion.js";
-import Search from "./component/Search.js"
+import Search from "./component/Search.js";
 import Dropdown from "./component/Dropdown.js";
 import Route from "./component/Route.js";
-import Header from "./component/Header.js"
+import Header from "./component/Header.js";
 
 const items = [
   {
@@ -43,21 +43,21 @@ function App() {
   return (
     <div>
       <Header />
-      <Route path='/'>
-        <Accordion items={items}/>
+      <Route path="/">
+        <Accordion items={items} />
       </Route>
       <Route path="/list">
         <Search />
       </Route>
       <Route path="/dropdown">
-        <Dropdown 
+        <Dropdown
           options={options}
           selected={selected}
           onSeletedChange={setSelected}
-          label='Select a Color'
+          label="Select a Color"
         />
       </Route>
-      <Route path='/translate'>
+      <Route path="/translate">
         <Translate />
       </Route>
     </div>
