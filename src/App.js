@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "fomantic-ui-css/semantic.min.css";
+import Translate from "./component/Translate.js"
 // import Accordion from "./component/Accodion.js";
 //import Search from "./component/Search.js"
-import Dropdown from "./component/Dropdown.js";
+//import Dropdown from "./component/Dropdown.js";
 
 /* const items = [
   {
@@ -20,7 +21,7 @@ import Dropdown from "./component/Dropdown.js";
   },
 ]; */
 
-const options = [
+/* const options = [
   {
     label: "The Color Red",
     value: "red",
@@ -33,16 +34,16 @@ const options = [
     label: "A Shade of Blue",
     value: "deepblue",
   },
-];
+]; */
 
 function App() {
-  const [selected, setSelected] = useState(options[0]);
-  const [showDropdown, setShowDropdown] = useState(true);
+  // const [selected, setSelected] = useState(options[0]);
+  // const [showDropdown, setShowDropdown] = useState(true);
   return (
     <div>
       {/* <Accordion items={items}/> */}
       {/* <Search /> */}
-      <button
+{/*       <button
         className="ui large button"
         onClick={() => setShowDropdown(!showDropdown)}
       >
@@ -57,7 +58,8 @@ function App() {
         />
       ) : (
         ""
-      )}
+      )} */}
+      <Translate />
     </div>
   );
 }
