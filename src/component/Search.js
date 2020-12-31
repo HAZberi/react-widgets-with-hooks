@@ -19,21 +19,29 @@ const Search = () => {
       const data = await AJAX(url);
       setResults(data.query.search);
     };
-    //if there exists a search term otherwise set the results back to empty
-    term ? search() : setResults([]);
+    //We will use a timer to limit the number of api calls
+    const timerId = setTimeout(() => {
+      //if there exists a search term otherwise set the results back to empty
+      term ? search() : setResults([]);
+    }, 500);
+    //useEffect is allowed to return a function
+    //Its a good place to create a reset and clear functionality
+    return () => {
+      clearInterval(timerId);
+    };
   }, [term]);
   //Render search list
   const renderedListItems = results.map((result) => {
     return (
       <div className="item" key={result.pageid}>
         <div className="content">
-          <a 
-            className='ui right floated'
+          <a
+            className="ui right floated"
             href={`https://en.wikipedia.org/?curid=${result.pageid}`}
-            target='_blank'
+            target="_blank"
             rel="noreferrer noopener"
-            >
-              <button className='ui primary button'>GO</button>
+          >
+            <button className="ui primary button">GO</button>
           </a>
           <div className="header">{result.title}</div>
           <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
