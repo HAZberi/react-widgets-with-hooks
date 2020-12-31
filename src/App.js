@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "fomantic-ui-css/semantic.min.css";
 // import Accordion from "./component/Accodion.js";
-import Search from "./component/Search.js"
+//import Search from "./component/Search.js"
+import Dropdown from "./component/Dropdown.js";
 
 /* const items = [
   {
@@ -19,11 +20,33 @@ import Search from "./component/Search.js"
   },
 ]; */
 
+const options = [
+  {
+    label: "The Color Red",
+    value: "red",
+  },
+  {
+    label: "The Color Green",
+    value: "green",
+  },
+  {
+    label: "A Shade of Blue",
+    value: "deepblue",
+  },
+];
+
 function App() {
+  const [selected, setSelected] = useState(options[0]);
   return (
     <div>
       {/* <Accordion items={items}/> */}
-      <Search />
+      {/* <Search /> */}
+      <Dropdown 
+        options={options}
+        selected={selected}
+        //onSelectedChange is our own created event
+        onSeletedChange={setSelected}
+      />
     </div>
   );
 }
